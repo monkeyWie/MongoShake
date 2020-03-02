@@ -65,8 +65,8 @@ func main() {
 	conf.Options.Version = utils.BRANCH
 
 	nimo.Profiling(int(conf.Options.SystemProfile))
-	nimo.RegisterSignalForProfiling(syscall.SIGUSR2)
-	nimo.RegisterSignalForPrintStack(syscall.SIGUSR1, func(bytes []byte) {
+	nimo.RegisterSignalForProfiling(syscall.SIGKILL)
+	nimo.RegisterSignalForPrintStack(syscall.SIGKILL, func(bytes []byte) {
 		LOG.Info(string(bytes))
 	})
 	utils.Welcome()

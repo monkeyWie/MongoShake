@@ -202,7 +202,7 @@ func StartIndexSync(indexMap map[utils.NS][]mgo.Index, toUrl string,
 				toNS := utils.NewNS(nsTrans.Transform(ns.Str()))
 
 				for _, index := range indexNs.indexList {
-					index.Background = false
+					// index.Background = false
 					if err = session.DB(toNS.Database).C(toNS.Collection).EnsureIndex(index); err != nil {
 						LOG.Warn("Create indexes for ns %v of dest mongodb failed. %v", ns, err)
 					}

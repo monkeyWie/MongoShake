@@ -1,11 +1,11 @@
 package filter
 
 import (
+	"fmt"
 	"mongoshake/collector/configure"
 	"mongoshake/common"
 	"regexp"
 	"strings"
-	"fmt"
 )
 
 // key: ns, value: true means prefix, false means contain
